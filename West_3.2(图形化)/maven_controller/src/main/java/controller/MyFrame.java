@@ -9,6 +9,8 @@ import org.example.service.Read;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 /**
  * @author CXQ
@@ -21,7 +23,46 @@ public class MyFrame extends JFrame {
         conCloMySql.connect();
         MyFrame myFrame = new MyFrame();
         myFrame.init();
-        // conCloMySql.close();
+        myFrame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+
+                JOptionPane.showMessageDialog(null,"欢迎使用！！！");
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                conCloMySql.close();
+                JOptionPane.showMessageDialog(null,"再见！！！");
+
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+
+            }
+        });
+        myFrame.init();
     }
 
 
@@ -71,5 +112,6 @@ public class MyFrame extends JFrame {
         setVisible(true);
         setBounds(870,250,120,180);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     }
 }

@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="maven_controller" />
         <module name="maven_service" />
+        <module name="maven_sevice" />
+        <module name="maven_controller" />
         <module name="maven_dao" />
       </profile>
     </annotationProcessing>
